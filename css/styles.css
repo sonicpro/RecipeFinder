@@ -1,3 +1,9 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 a:link, a:visited {
 	}
 
@@ -12,25 +18,127 @@ h2 {
 
 body > header {
 }
-
-  nav ul {
+  .logo {
+      float:left;
+      margin-left: 145px;
+      position: relative;
+      top: 34px;
+      margin-top: -34px;
+      z-index: 10;
   }
 
-.promo {
-}
+  nav {
+      float: right;
+      margin-right: 177px;
+      padding-top: 20px;
+  }
+    nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    }
+      nav ul li {
+	  display: inline-block;
+	  *display: inline; /* for IE7 */
+	  margin-right: 30px;
+      }
 
-.main {
+.promo {
+    position: relative; /* The positionong context for the absolute positioned div. */
+    z-index: 5;
+}
+  .promo-desc {
+      position: absolute;
+      bottom: 93px;
+      right: 75px;
+  }
+
+.center-global {
+    width: 1020px;
+    margin: 0 auto;
 }
 
   .latest {
+      width: 640px;
+      float: left;
+      padding: 0 40px;
   }
     .media {
+	clear: left;
+	padding-bottom: 28px;
+	overflow: hidden;
     }
       .media img {
+	  float: left;
+	  margin-right: 30px;
       }
 
-      .sidebar {
+  .sidebar {
+      width: 360px;
+      float: right;
+  }
+    .rating {
+	float: left;
+	clear: left;
+	padding-top: 4px;
+	padding-right: 15px;
+	width: 45px;
+    }
+    .pop-item {
+	padding-bottom: 20px;
+	float: left;
+	width: 250px;
+    }
+
+.footer-inside {
+    padding-left: 40px;
+}
+  .footer-1 {
+      float: left;
+      width: 422px;
+  }
+  .footer-2 {
+      float: left;
+      width: 326px;
+  }
+  .footer-3 {
+      float: left;
+      width: 232px;
   }
 
-footer {
+
+/* Clearfix class */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
 }
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1; /* for IE6 and IE7 */
+}
+
+/* Tweet styles */
+.tweet {
+    padding-left: 55px;
+    padding-right: 20px;
+    position: relative;
+}
+  .tweet:before {
+      content: url(../images/twitter-icon.png);
+      display: block;
+      position: absolute;
+      left: 15px;
+      top: 4px;
+  }
+
+/* Promo and footer styling.
+.footer-inside {
+    width: 1020px;
+    margin: 0 auto;
+}
+*/
