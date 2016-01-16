@@ -10,6 +10,7 @@ a {
 }
 
 a:hover {
+    text-decoration: underline;
 }
 
 h1 {
@@ -102,6 +103,15 @@ body > header {
       }
       nav a {
 	  color: #fefefe;
+	  -webkit-transition: color .4s ease-out;
+	  -moz-transition: color .4s ease-out;
+	  -o-transition: color .4s ease-out;
+	  transition: color .4s ease-out;
+      }
+
+      nav a:hover { /* Override the global line decoration by using descendant combinator. */
+	  text-decoration: none;
+	  color: #cdb8a5;
       }
 
 .promo {
@@ -124,6 +134,11 @@ body > header {
       background-color: #6c0733;
       box-shadow: rgba(0, 0, 0, .25) 0 7px 2px 0;
       color: #fefefe;
+      transition: transform .5s ease-out;
+  }
+  .promo-btn:hover {
+      text-decoration: none;
+      transform: scale(1.05);
   }
 
 .center-global {
@@ -148,6 +163,34 @@ body > header {
 	  border: solid 9px #ede0d5;
 	  box-shadow: rgba(0, 0, 0, .25) 2px 2px 2px 0;
       }
+      .media h2 { /* Override global ChelseaMarket h2 font */
+	  color: #49301a;
+	  font-family: LatoBold, Arial, Helvetica, sans-serif;
+	  font-weight: normal;
+	  font-size: 26px;
+	  margin-bottom: 5px;
+      }
+      .media p {
+	  margin: 0;
+	  font-size: 18px;
+	  color: #7b6047;
+	  text-transform: uppercase;
+      }
+      .media a { /* Override the global link decoration */
+	  text-decoration: none;
+      }
+      .media a:hover h2,
+      .media a:hover p {
+	  color: #b32c1c;
+      }
+      /* Put the transition property directly to the element selectors rather than to :hover suffixed */
+      .media a:hover h2,
+      .media a:hover p {
+	  -webkit-transition: color .4s ease-out;
+	  -moz-transition: color .4s ease-out;
+	  -o-transition: color .4s ease-out;
+	  transition: color .3s linear;
+      }
     .more-btn {
 	text-align: center;
 	float: right;
@@ -165,11 +208,15 @@ body > header {
 	padding-top: 4px;
 	padding-right: 15px;
 	width: 45px;
+	color: #810430;
+	font-size: 13px;
     }
     .pop-item {
 	padding-bottom: 20px;
 	float: left;
 	width: 250px;
+	text-transform: uppercase;
+	font-size: 18px;
     }
 
 /* Add a gap between the bottom of .main div contents and the footer. */
@@ -208,12 +255,12 @@ body > header {
 .cf {
     *zoom: 1; /* for IE6 and IE7 */
 }
-
 /* Tweet styles */
 .tweet {
     padding-left: 55px;
     padding-right: 20px;
     position: relative;
+    line-height: 1.4;
 }
   .tweet:before {
       content: url(../images/twitter-icon.png);
@@ -222,11 +269,19 @@ body > header {
       left: 15px;
       top: 4px;
   }
+  /* Add transitoin directly to the :hover selector to avoid repeating on mouse-out */
+  .tweet:hover:before {
+      transition: transform 0.5s linear;
+      transform: rotate(360deg);
+  }
   .tweet a {
       color: #810430;
   }
   .tweet .date {
       color: #8f7e6d;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-style: italic;
   }
 
 /* Footer background and padding. */
