@@ -73,6 +73,7 @@ body > header {
     box-shadow: rgba(0, 0, 0, .25) 0 3px 2px 0;
     position: relative;
     z-index: 10;
+    background-image: linear-gradient(#87053e, #560329);
 }
   .logo {
       float:left;
@@ -127,12 +128,18 @@ body > header {
       width: 316px;
       text-align: center;
   }
+  /* Promo banner message color */
+  .promo-desc h1 {
+      color: #fefefe;
+  }
   .promo-btn {
       display: inline-block; /* Add width to anchor tag. */
       width: 208px;
       padding: 13px 0;
-      background-color: #6c0733;
+      background-color: #560329; /* Gradient fallback. */
+      background-image: linear-gradient(#87053e, #560329);
       box-shadow: rgba(0, 0, 0, .25) 0 7px 2px 0;
+      font-size: 20px;
       color: #fefefe;
       transition: transform .5s ease-out;
   }
