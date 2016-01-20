@@ -141,10 +141,18 @@ body > header {
       box-shadow: rgba(0, 0, 0, .25) 0 7px 2px 0;
       font-size: 20px;
       color: #fefefe;
+      -webkit-transition: transform .5s ease-out;
+      -moz-transition: transform .5s ease-out;
+      -ms-transition: transform .5s ease-out;
+      -o-transition: transform .5s ease-out;
       transition: transform .5s ease-out;
   }
   .promo-btn:hover {
       text-decoration: none;
+      -webkit-transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      -o-transform: scale(1.05);
       transform: scale(1.05);
   }
 
@@ -191,8 +199,8 @@ body > header {
 	  color: #b32c1c;
       }
       /* Put the transition property directly to the element selectors rather than to :hover suffixed */
-      .media a:hover h2,
-      .media a:hover p {
+      .media a h2,
+      .media a p {
 	  -webkit-transition: color .4s ease-out;
 	  -moz-transition: color .4s ease-out;
 	  -o-transition: color .4s ease-out;
@@ -278,7 +286,15 @@ body > header {
   }
   /* Add transitoin directly to the :hover selector to avoid repeating on mouse-out */
   .tweet:hover:before {
+      -webkit-transition: transform 0.5s linear;
+      -moz-transition: transform 0.5s linear;
+      -ms-transition: transform 0.5s linear;
+      -o-transition: transform 0.5s linear;
       transition: transform 0.5s linear;
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
       transform: rotate(360deg);
   }
   .tweet a {
