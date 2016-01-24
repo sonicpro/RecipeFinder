@@ -77,15 +77,61 @@ body > header {
 }
   .logo {
       float:left;
-      margin-left: 145px;
+      margin-left: 14.2156862745098%;
       position: relative;
       top: 34px;
       margin-top: -34px;
+      -webkit-transform: translateX(-800%);
+      -moz-transform: translateX(-800%);
+      -ms-transform: translateX(-800%);
+      -o-transform: translateX(-800%);
+      transform: translateX(-800%);
+      animation: logomove 2s ease-out 1s 1 normal forwards;
   }
+  @-webkit-keyframes logomove {
 
+      0% {
+	  -webkit-transform: translateX(-800%) rotate(0);
+      }
+
+      100% {
+	  -webkit-transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
+      }
+  }
+  @-moz-keyframes logomove {
+
+      0% {
+	  -moz-transform: translateX(-800%) rotate(0);
+      }
+
+      100% {
+	  -moz-transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
+      }
+  }
+  @-o-keyframes logomove {
+
+      0% {
+	  -o-transform: translateX(-800%) rotate(0);
+      }
+
+      100% {
+	  -o-transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
+      }
+  }
+  @keyframes logomove {
+
+      0% {
+	  transform: translateX(-800%) rotate(0);
+      }
+
+      100% {
+	  transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
+      }
+  }
+  
   nav {
       float: right;
-      margin-right: 177px;
+      margin-right: 17.35294117647059%;
       padding-top: 20px;
   }
     nav ul {
@@ -120,12 +166,18 @@ body > header {
     z-index: 5;
     padding-bottom: 8px;
     box-shadow: rgba(0, 0, 0, .25) 0 3px 2px 0;
+    background-image: linear-gradient(#4e0324, #4e0324 97%, #851f49);
+    overflow: hidden; /* Hide excess parts of the enclosed image without scrollbars .promo size gets smaller than the image size. */
 }
+  .promo img {
+      width: auto; /* Override the width set in HTML for .center-global container. */
+      height: auto;
+  }
   .promo-desc {
       position: absolute;
       bottom: 93px;
-      right: 75px;
-      width: 316px;
+      right: 7.35294117647059%;
+      width: 30.98039215686275%;
       text-align: center;
   }
   /* Promo banner message color */
@@ -134,7 +186,7 @@ body > header {
   }
   .promo-btn {
       display: inline-block; /* Add width to anchor tag. */
-      width: 208px;
+      width: 65.82278481012658%;
       padding: 13px 0;
       background-color: #560329; /* Gradient fallback. */
       background-image: linear-gradient(#87053e, #560329);
@@ -157,14 +209,14 @@ body > header {
   }
 
 .center-global {
-    width: 1020px;
+    max-width: 1020px;
     margin: 0 auto;
 }
 
   .latest {
-      width: 640px;
+      width: 62.74509803921569%;
       float: left;
-      padding: 0 40px;
+      padding: 0 3.92156862745098% 0 3.92156862745098%;
       background: url(../images/bg-column.png) no-repeat top right;
   }
     .media {
@@ -174,7 +226,10 @@ body > header {
     }
       .media img {
 	  float: left;
-	  margin-right: 30px;
+	  margin-right: 5.35714285714286%; /* 30 / (.latest width minus paddings = 640 - 40 * 2) */
+	  max-width: 241px;
+	  width: 100%; /* Means "shrink proportionally with the .media container". */
+	  height: auto; /* Helps the height stay proportional to the width. */
 	  border: solid 9px #ede0d5;
 	  box-shadow: rgba(0, 0, 0, .25) 2px 2px 2px 0;
       }
@@ -210,26 +265,26 @@ body > header {
 	text-align: center;
 	float: right;
 	margin-right: 50px;
-	width:280px;
+	width:280px; /* Leave this in pixels for the RWD purposes, it has nothing beside it. */
     }
 
   .sidebar {
-      width: 360px;
+      width: 35.29411764705882%;
       float: right;
   }
     .rating {
 	float: left;
 	clear: left;
 	padding-top: 4px;
-	padding-right: 15px;
-	width: 45px;
+	padding-right: 4.16666666666667%;
+	width: 12.5%;
 	color: #810430;
 	font-size: 13px;
     }
     .pop-item {
 	padding-bottom: 20px;
 	float: left;
-	width: 250px;
+	width: 69.44444444444444%;
 	text-transform: uppercase;
 	font-size: 18px;
     }
@@ -244,15 +299,15 @@ body > header {
 }
   .footer-1 {
       float: left;
-      width: 422px;
+      width: 43.06122448979592%; /* 422px / (.footer-inside width minus padding = 1020 - 40) */
   }
   .footer-2 {
       float: left;
-      width: 326px;
+      width: 33.26530612244898%;
   }
   .footer-3 {
       float: left;
-      width: 232px;
+      width: 23.6734693877551%;
   }
 
 
@@ -272,8 +327,8 @@ body > header {
 }
 /* Tweet styles */
 .tweet {
-    padding-left: 55px;
-    padding-right: 20px;
+    padding-left: 15.27777777777778%;
+    padding-right: 5.55555555555556%;
     position: relative;
     line-height: 1.4;
 }
@@ -281,7 +336,7 @@ body > header {
       content: url(../images/twitter-icon.png);
       /* display: block; */
       position: absolute;
-      left: 15px;
+      left: 4.16666666666667%;
       top: 4px;
   }
   /* Add transitoin directly to the :hover selector to avoid repeating on mouse-out */
@@ -332,7 +387,7 @@ footer ul {
 }
 .footer-1 li { /* Add columns to the leftmost list in the footer. */
     float: left;
-    width: 195px;
+    width: 46.2085308056872%; /* 195 / 422 */
 }
   .footer-1 ul a,
   .footer-2 ul a {
@@ -341,16 +396,17 @@ footer ul {
 
 .footer-2 {
     float: left;
-    width: 326px;
+    width: 33.26530612244898%; /* 326 / 980 */
     padding-top: 22px;
 }
   .footer-2 ul {
-      margin: 0 80px 0 0; /* Move the list under the footer2 heading. */
+      /* The margins are calculates as 0 80/326 0 0 */    
+      margin: 0 24.5398773006135% 0 0; /* Move the list under the footer2 heading. */
   }
 
 .footer-3 {
     float: left;
-    width: 232px;
+    width: 23.6734693877551%; /* 232 / 980 */
     color: #801c48;
     padding-top: 22px;
 }
