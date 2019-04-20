@@ -82,50 +82,14 @@ body > header {
       -moz-transform: translateX(-800%);
       -ms-transform: translateX(-800%);
       -o-transform: translateX(-800%);
-      transform: translateX(-800%);
-      animation: logomove 2s ease-out 1s 1 normal forwards;
+      transform: translateX(-800%) rotate(0);
+      transition: transform 2s ease-out;
   }
-  @-webkit-keyframes logomove {
 
-      0% {
-	  -webkit-transform: translateX(-800%) rotate(0);
-      }
-
-      100% {
-	  -webkit-transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
-      }
+  .logo.take-off {
+      transform: translateX(0) rotate(-360deg); /* Logo rotates counterclockwise while flying. */
   }
-  @-moz-keyframes logomove {
 
-      0% {
-	  -moz-transform: translateX(-800%) rotate(0);
-      }
-
-      100% {
-	  -moz-transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
-      }
-  }
-  @-o-keyframes logomove {
-
-      0% {
-	  -o-transform: translateX(-800%) rotate(0);
-      }
-
-      100% {
-	  -o-transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
-      }
-  }
-  @keyframes logomove {
-
-      0% {
-	  transform: translateX(-800%) rotate(0);
-      }
-
-      100% {
-	  transform: translateX(0) rotate(-360deg); /* The logo will rotate counterclockwise while flying. */
-      }
-  }
-  
   nav {
       float: right;
       margin-right: 17.35294117647059%;
