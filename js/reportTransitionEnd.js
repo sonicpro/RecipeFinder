@@ -4,6 +4,5 @@ window.onload = function () {
     });
     // Start transition by adding "take-off" class to the logo.
     var logo = document.querySelector(".logo"); 
-    var oldClasses = logo.className;
-    logo.setAttribute("class", oldClasses + " take-off");
+    logo.classList.add("take-off");
 };
